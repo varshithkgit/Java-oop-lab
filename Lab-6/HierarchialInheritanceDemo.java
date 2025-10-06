@@ -49,7 +49,7 @@ class PGStudent extends Student {
     }
 }
 
-public class StudentHierarchyDemo {
+public class HierarchialInheritanceDemo {
     public static void main(String[] args) {
         UGStudent ug = new UGStudent("Varshith K", "UG4157", 5, "Computer Science");
         PGStudent pg = new PGStudent("Rahul Sharma", "PG1023", "AI & ML", "Deep Learning Optimization");
