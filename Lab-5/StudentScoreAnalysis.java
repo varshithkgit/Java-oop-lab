@@ -55,48 +55,37 @@ class Student {
     }
 }
 
-
 public class StudentScoreAnalysis {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-
         System.out.print("Enter number of students: ");
         int n = sc.nextInt();
-        sc.nextLine(); // consume newline
-
+        sc.nextLine();
         List<Student> students = new ArrayList<>();
-
         for (int i = 0; i < n; i++) {
             System.out.println("\nEnter details for Student " + (i + 1));
             System.out.print("Enter ID: ");
             String id = sc.nextLine();
             System.out.print("Enter Name: ");
             String name = sc.nextLine();
-
             double[] scores = new double[Student.numberOfSubjects];
             for (int j = 0; j < Student.numberOfSubjects; j++) {
                 System.out.print("Enter score for subject " + (j + 1) + ": ");
                 scores[j] = sc.nextDouble();
             }
-            sc.nextLine(); // consume newline
-
+            sc.nextLine();
             Student s = new Student(id, name, scores);
-
             System.out.print("Enter number of skills: ");
             int skillCount = sc.nextInt();
-            sc.nextLine(); // consume newline
-
+            sc.nextLine();
             String[] skills = new String[skillCount];
             for (int j = 0; j < skillCount; j++) {
                 System.out.print("Enter skill " + (j + 1) + ": ");
                 skills[j] = sc.nextLine();
             }
             s.fillSkills(skills);
-
             students.add(s);
         }
-
-        // Display all students and compute class average
         double totalAvg = 0;
         System.out.println("\n--- STUDENT ANALYSIS REPORT ---");
         for (Student s : students) {
@@ -104,7 +93,6 @@ public class StudentScoreAnalysis {
             totalAvg += s.calcAvg();
         }
         System.out.println("\nClass Average: " + (totalAvg / students.size()));
-
         sc.close();
     }
 }
